@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { createChart, ColorType, IChartApi, ISeriesApi } from "lightweight-charts";
+import { createChart, ColorType, IChartApi, ISeriesApi, CandlestickSeries, HistogramSeries } from "lightweight-charts";
 import { useAppStore } from "../state/store";
 
 export function ChartPanel() {
@@ -45,7 +45,7 @@ export function ChartPanel() {
       },
     });
 
-    const candlestickSeries = chart.addCandlestickSeries({
+    const candlestickSeries = chart.addSeries(CandlestickSeries, {
       upColor: "#34d399", // emerald-400
       downColor: "#fb7185", // rose-400
       borderVisible: false,
@@ -53,7 +53,7 @@ export function ChartPanel() {
       wickDownColor: "#fb7185",
     });
 
-    const volumeSeries = chart.addHistogramSeries({
+    const volumeSeries = chart.addSeries(HistogramSeries, {
       color: "#3f3f46", // zinc-700
       priceFormat: {
         type: "volume",

@@ -8,7 +8,7 @@ import { BottomTabs } from "./BottomTabs";
 
 export function SplitLayout() {
   return (
-    <Group direction="horizontal" className="h-[calc(100vh-48px)] w-full overflow-hidden bg-zinc-950">
+    <Group orientation="horizontal" className="h-[calc(100vh-48px)] w-full overflow-hidden bg-zinc-950">
       {/* Left Panel: Quote, Tape, Alerts */}
       <Panel defaultSize={20} minSize={15} className="flex flex-col border-r border-zinc-800">
         <div className="flex-1 overflow-hidden flex flex-col">
@@ -24,7 +24,7 @@ export function SplitLayout() {
 
       {/* Center Panel: Chart & Bottom Tabs */}
       <Panel defaultSize={55} minSize={30} className="flex flex-col">
-        <Group direction="vertical">
+        <Group orientation="vertical">
           <Panel defaultSize={70} minSize={40} className="flex flex-col">
             <ChartPanel />
           </Panel>
